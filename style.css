@@ -9,6 +9,28 @@ html {
 	font-family: 'Montserrat', sans-serif;
 	scroll-behavior: smooth;
 }
+:root {
+    --main-color: crimson;
+    --alt-color: #2c79cb;
+    --third-color: #32c340;
+    --forth-color: rgb(138, 31, 138);
+}
+::-webkit-scrollbar {
+    width: 13px;
+}
+::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+::-webkit-scrollbar-thumb {
+    background-color: crimson;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(178, 28, 58);
+}
+::selection {
+    background-color: #fff;
+    color: #fafafa;
+}
 a {
 	text-decoration: none;
 }
@@ -44,31 +66,37 @@ p {
 .section-title span {
 	color: crimson;
 }
-
 .cta {
 	display: inline-block;
 	padding: 10px 30px;
 	color: white;
 	background-color: transparent;
+    animation: change-color 12s ease infinite;
 	border: 2px solid crimson;
 	font-size: 2rem;
 	text-transform: uppercase;
 	letter-spacing: 0.1rem;
 	margin-top: 30px;
-	transition: 0.3s ease;
+	transition: 0.6s ease;
 	transition-property: background-color, color;
 }
 .cta:hover {
 	color: white;
-	background-color: crimson;
+    animation: change-color 12s ease infinite;
+	background-image: linear-gradient(to bottom , crimson , rgb(197, 31, 64) , rgb(140, 43, 62));
 }
 .brand h1 {
 	font-size: 3rem;
 	text-transform: uppercase;
 	color: white;
+    font-weight: 700;
+    font-style: italic;
 }
 .brand h1 span {
 	color: crimson;
+    font-style: normal;
+    font-size: 3.2rem;
+    animation: change-color 12s ease infinite;
 }
 
 /* Header section */
@@ -121,6 +149,7 @@ p {
 	color: white;
 	text-transform: uppercase;
 	padding: 20px;
+    transition: 0.3s;
 	display: block;
 }
 #header .nav-list ul a::after {
@@ -141,6 +170,10 @@ p {
 }
 #header .nav-list ul li:hover a {
 	color: crimson;
+    transform: scale(1.01);
+    animation: change-color 12s ease infinite;
+    font-size: 2rem;
+    background-color: rgba(255 , 255 , 255 , 15%);
 }
 #header .hamburger {
 	height: 60px;
@@ -249,6 +282,7 @@ p {
 	height: 100%;
 	width: 0;
 	background-color: crimson;
+    animation: change-color 12s ease infinite;
 	animation: text_reveal_box 1s ease;
 	animation-delay: 0.5s;
 }
@@ -296,7 +330,11 @@ p {
 	margin: 10px 5%;
 	position: relative;
 	z-index: 1;
+    transition: 0.6s ease;
 	overflow: hidden;
+}
+#services .service-item:hover {
+    transform: scale(1.1) rotate(2deg);
 }
 #services .service-item::after {
 	content: '';
@@ -306,7 +344,7 @@ p {
 	height: 100%;
 	width: 100%;
 	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-	opacity: 0.9;
+	opacity: 0.8;
 	z-index: -1;
 }
 #services .service-bottom .icon {
@@ -426,6 +464,7 @@ p {
 #about .col-right .cta {
 	color: black;
 	margin-bottom: 50px;
+    animation: change-color 12s ease infinite;
 	padding: 10px 20px;
 	font-size: 2rem;
 }
@@ -443,6 +482,7 @@ p {
 	height: 98%;
 	width: 98%;
 	border: 7px solid crimson;
+    animation: change-color 12s ease infinite;
 	z-index: -1;
 }
 /* End About Section */
@@ -470,10 +510,12 @@ p {
 	align-items: center;
 	flex-direction: column;
 	box-shadow: 0px 0px 18px 0 #0000002c;
-	transition: 0.3s ease box-shadow;
+	transition: 1s ease;
 }
 #contact .contact-item:hover {
 	box-shadow: 0px 0px 5px 0 #0000002c;
+    width: 50%;
+    transform: scale(1.1) rotate(1deg);
 }
 #contact .icon {
 	width: 70px;
